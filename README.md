@@ -76,13 +76,17 @@ Default output format
 
 # Creating Instances 
 ---------------- 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/4db4122c-8e3e-489b-97c1-6383b03ba11a">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/0f3860d6-0ea8-4d30-a864-a3901d05d9b0">
 
 
 
 
 # open HubCluster 
 -----------------------
+```bash
+** aws eks describe-cluster --name hub-cluster --region us-east-1 --query cluster.status
+```
+
 ```bash
 1. kubectl config get-contexts
 ````
@@ -93,9 +97,9 @@ Default output format
 3. kubectl config current-config 
 ```
   ```bash
+
 4. Install Argocd
 kubectl create namespace argocd
-
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 ```
@@ -114,6 +118,27 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 8. kubectl edit deploy/argocd-server -n argocd
 /insecure
 ```
+# To reveal the actual password:
+
+If you want to view the admin password directly instead of editing the secret, you can use this command:
+
+```bash
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 --decode
+```
+# ArgoCd UI
+-------------------------------------------
+
+<img width="959" alt="Screenshot 2024-10-21 145825" src="https://github.com/user-attachments/assets/53100cf5-373c-4b1b-bde2-2bda674f12b3">
+
+
+![Screenshot 2024-10-21 153016](https://github.com/user-attachments/assets/bf9b23c3-c554-437b-917b-9f44a6293a9b)
+
+# Argocd CLI 
+---------------------------------------------------
+argocd login <ip-address-port>
+
+argocd cluster add <context> --server <ip-address-port>
+
 
 
 
