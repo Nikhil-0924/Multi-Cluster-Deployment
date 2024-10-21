@@ -55,6 +55,65 @@ Default output format
 
 4.CloudFromation 
 
+# Creating Cluster
+--------------------------------
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/95388e7f-9046-4a62-9cbe-537a29dcfaa3">
+
+# Creating Nodes
+--------
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/6081fd25-ea67-4e7d-86de-ec97bd6a395d">
+
+
+# Creating VPC
+---------------------------
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/7424b241-2109-4bd1-ac0b-e3693461831f">
+
+# Creating CloudFromation 
+-----------------
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/7a70db0a-8db4-4ca1-99ae-adbbe8b60084">
+
+# Creating Instances 
+---------------- 
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4db4122c-8e3e-489b-97c1-6383b03ba11a">
+
+
+
+
+# open HubCluster 
+-----------------------
+```bash
+1. kubectl config get-contexts
+````
+```bash
+2. kubectl config use-context
+```
+```bash
+3. kubectl config current-config 
+```
+  ```bash
+4. Install Argocd
+kubectl create namespace argocd
+
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+```
+```bash
+5. kubectl get cm -n argocd
+```
+```bash
+6. kubectl edit configmap <     > -n argocd
+
+(Inscure) 
+```
+```bash
+7. kubectl describe deployement/argocd-server -n arogocd
+```
+```bash
+8. kubectl edit deploy/argocd-server -n argocd
+/insecure
+```
 
 
 
