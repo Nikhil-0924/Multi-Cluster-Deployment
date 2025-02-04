@@ -1,7 +1,7 @@
 # Multi-Cluster-Deployment
 Deployment of Multi Cluster 
 
-# prerequisites
+ # prerequisites
 
 kubectl – A command line tool for working with Kubernetes clusters. For more information, see Installing or updating kubectl. https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
